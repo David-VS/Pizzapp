@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Pizzapp</string>
+
+    <string name="str_pick">Pick</string>
+    <string name="str_btn_order">Place order</string>
+
+    <string-array name="toppings">
+        <item>Pineapple</item>
+        <item>Salami</item>
+        <item>Pepperoni</item>
+        <item>Bacon</item>
+        <item>Chicken</item>
+        <item>Onions</item>
+        <item>Garlic</item>
+    </string-array>
+
+    <string-array name="sizes">
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+    </string-array>
+</resources>
