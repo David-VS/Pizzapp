@@ -11,7 +11,9 @@
         <item>Bacon</item>
         <item>Chicken</item>
         <item>Onions</item>
-        <item>Garlic</item>
+        <item>Oregano</item>
+        <item>Mozarella</item>
+        <item>chocoladesaus</item>
     </string-array>
 
     <string-array name="sizes">

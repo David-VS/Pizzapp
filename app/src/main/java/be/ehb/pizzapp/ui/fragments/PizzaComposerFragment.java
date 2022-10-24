@@ -48,7 +48,7 @@ public class PizzaComposerFragment extends Fragment {
     private View.OnClickListener orderListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Toast.makeText(myContext, pizzadescription, Toast.LENGTH_LONG).show();
+            Toast.makeText(myContext.getApplicationContext(), pizzadescription, Toast.LENGTH_LONG).show();
         }
     };
 
@@ -76,26 +76,7 @@ public class PizzaComposerFragment extends Fragment {
         Button btnPickToppings = rootView.findViewById(R.id.btn_pick_toppings);
 
         PizzaViewModel model = new ViewModelProvider(myContext).get(PizzaViewModel.class);
-        model.getSharedPizza().observe(getViewLifecycleOwner(), new Observer<Pizza>() {
-
-            @Override
-            public void onChanged(Pizza pizza) {
-                String[] toppings = pizza.getToppings();
-                StringBuilder sBuilder = new StringBuilder();
-                int listSize = toppings.length;
-                for(int i = 0; i < listSize; i++ ){
-                    if(i != listSize - 1){
-                        sBuilder.append(toppings[i]);
-                        sBuilder.append("\n");
-                    }else{
-                        sBuilder.append(toppings[i]);
-                    }
-                }
-                tvToppings.setText(sBuilder.toString());
-                tvSize.setText(pizza.getSize());
-                pizzadescription = pizza.toString();
-            }
-        });
+        model.getSharedPizza().observe(getViewLifecycleOwner(), new PizzaObserver(tvToppings, tvSize));
 
         sizeDialogFragment = new SizeDialogFragment();
         toppingsDialogFragment = new ToppingsDialogFragment();
@@ -107,4 +88,32 @@ public class PizzaComposerFragment extends Fragment {
         return rootView;
     }
 
+    private class PizzaObserver implements Observer<Pizza> {
+
+        private final TextView tvToppings;
+        private final TextView tvSize;
+
+        public PizzaObserver(TextView tvToppings, TextView tvSize) {
+            this.tvToppings = tvToppings;
+            this.tvSize = tvSize;
+        }
+
+        @Override
+        public void onChanged(Pizza pizza) {
+            String[] toppings = pizza.getToppings();
+            StringBuilder sBuilder = new StringBuilder();
+            int listSize = toppings.length;
+            for(int i = 0; i < listSize; i++ ){
+                if(i != listSize - 1){
+                    sBuilder.append(toppings[i]);
+                    sBuilder.append("\n");
+                }else{
+                    sBuilder.append(toppings[i]);
+                }
+            }
+            tvToppings.setText(sBuilder.toString());
+            tvSize.setText(pizza.getSize());
+            pizzadescription = pizza.toString();
+        }
+    }
 }

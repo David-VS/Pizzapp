@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF1744</color>
     <color name="window_background">#FFFFFF</color>
     <color name="textColorPrimary">#CDFFFFFF</color>
+    <color name="dialogTitles">#2196F3</color>
 </resources>
