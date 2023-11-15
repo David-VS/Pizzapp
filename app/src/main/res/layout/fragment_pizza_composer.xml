@@ -16,7 +16,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        app:fontFamily="@font/open_sans_condensed_light"
+        app:fontFamily="monospace"
         app:layout_constraintEnd_toStartOf="@+id/btn_pick_size"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -30,7 +30,8 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="@string/str_pick"
-        app:fontFamily="@font/open_sans_condensed_light"
+        app:backgroundTint="@color/colorAccent"
+        app:fontFamily="monospace"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -42,7 +43,8 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="@string/str_pick"
-        app:fontFamily="@font/open_sans_condensed_light"
+        app:backgroundTint="@color/colorAccent"
+        app:fontFamily="monospace"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_pick_size" />
 
@@ -57,7 +59,7 @@
         android:layout_marginRight="16dp"
         android:minLines="5"
         android:singleLine="false"
-        app:fontFamily="@font/open_sans_condensed_light"
+        app:fontFamily="monospace"
         app:layout_constraintEnd_toStartOf="@+id/btn_pick_toppings"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_size"
@@ -65,6 +67,7 @@
 
     <Button
         android:id="@+id/btn_order"
+        style="@style/Widget.MaterialComponents.Button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -73,7 +76,8 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="@string/str_btn_order"
-        app:fontFamily="@font/open_sans_condensed_light"
+        app:backgroundTint="@color/colorAccent"
+        app:fontFamily="monospace"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_toppings" />

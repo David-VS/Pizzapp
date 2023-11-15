@@ -56,20 +56,20 @@ public class ToppingsDialogFragment extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-        AlertDialog.Builder bob = new AlertDialog.Builder(myContext);
+        AlertDialog.Builder builder = new AlertDialog.Builder(myContext);
 
         toppings = getResources().getStringArray(R.array.toppings);
         checkedIndexes = new boolean[toppings.length];
         Arrays.fill(checkedIndexes, false);
         selectedItems = new ArrayList<>();
 
-        bob.setTitle("Pick your toppings");
-        bob.setMultiChoiceItems(toppings, checkedIndexes, selectedListener);
+        builder.setTitle("Pick your toppings");
+        builder.setMultiChoiceItems(toppings, checkedIndexes, selectedListener);
 
-        bob.setNegativeButton(android.R.string.cancel, null);
-        bob.setPositiveButton(android.R.string.ok, confirmListener);
+        builder.setNegativeButton(android.R.string.cancel, null);
+        builder.setPositiveButton(android.R.string.ok, confirmListener);
 
-        return bob.create();
+        return builder.create();
     }
 
 

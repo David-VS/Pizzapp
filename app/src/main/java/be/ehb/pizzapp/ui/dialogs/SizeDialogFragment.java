@@ -24,13 +24,8 @@ public class SizeDialogFragment extends DialogFragment {
 
     private FragmentActivity myContext;
     private int selected = -1;
-    private DialogInterface.OnClickListener selectionListener = new DialogInterface.OnClickListener() {
-        @Override
-        public void onClick(DialogInterface dialogInterface, int i) {
-            selected = i;
-        }
-    };
-    private DialogInterface.OnClickListener confirmListener = new DialogInterface.OnClickListener() {
+    private final DialogInterface.OnClickListener selectionListener = (dialogInterface, i) -> selected = i;
+    private final DialogInterface.OnClickListener confirmListener = new DialogInterface.OnClickListener() {
         @Override
         public void onClick(DialogInterface dialogInterface, int i) {
             String size = getResources().getStringArray(R.array.sizes)[selected];
@@ -42,21 +37,20 @@ public class SizeDialogFragment extends DialogFragment {
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-
         myContext = (FragmentActivity) context;
     }
 
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-        AlertDialog.Builder bob = new AlertDialog.Builder(myContext);
+        AlertDialog.Builder builder = new AlertDialog.Builder(myContext);
 
-        bob.setTitle("Pick a size");
-        bob.setSingleChoiceItems(R.array.sizes, selected, selectionListener);
+        builder.setTitle("Pick a size");
+        builder.setSingleChoiceItems(R.array.sizes, selected, selectionListener);
 
-        bob.setNegativeButton(android.R.string.cancel, null);
-        bob.setPositiveButton(android.R.string.ok, confirmListener);
+        builder.setNegativeButton(android.R.string.cancel, null);
+        builder.setPositiveButton(android.R.string.ok, confirmListener);
 
-        return bob.create();
+        return builder.create();
     }
 }

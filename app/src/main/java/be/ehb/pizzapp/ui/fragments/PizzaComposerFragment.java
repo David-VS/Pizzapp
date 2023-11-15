@@ -48,7 +48,7 @@ public class PizzaComposerFragment extends Fragment {
     private View.OnClickListener orderListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Toast.makeText(myContext.getApplicationContext(), pizzadescription, Toast.LENGTH_LONG).show();
+            Toast.makeText(myContext, pizzadescription, Toast.LENGTH_LONG).show();
         }
     };
 
