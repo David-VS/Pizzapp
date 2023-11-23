@@ -49,7 +49,6 @@ public class ToppingsDialogFragment extends DialogFragment {
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-
         myContext = (FragmentActivity) context;
     }
 
@@ -71,6 +70,4 @@ public class ToppingsDialogFragment extends DialogFragment {
 
         return builder.create();
     }
-
-
 }

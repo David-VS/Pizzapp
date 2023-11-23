@@ -6,18 +6,21 @@
 
     <string-array name="toppings">
         <item>Pineapple</item>
+        <item>Explicitly no ham</item>
         <item>Salami</item>
         <item>Pepperoni</item>
         <item>Bacon</item>
         <item>Chicken</item>
         <item>Onions</item>
         <item>Oregano</item>
-        <item>Mozarella</item>
+        <item>Mozzarella</item>
+        <item>Parmigiano</item>
     </string-array>
 
     <string-array name="sizes">
         <item>Small</item>
         <item>Medium</item>
         <item>Large</item>
+        <item>American size</item>
     </string-array>
 </resources>
